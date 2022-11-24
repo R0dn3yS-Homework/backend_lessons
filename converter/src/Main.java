@@ -40,7 +40,10 @@ public class Main {
         String newValue = String.format("%.2f", cur * audValue);
 
         System.out.println("The value of " + cur + "EUR is " + newValue + "AUD");
-
+      }
+      default -> {
+        System.out.println("Invalid choice.\nExiting...");
+        System.exit(1);
       }
     }
 
