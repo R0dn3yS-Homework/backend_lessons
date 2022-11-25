@@ -16,27 +16,21 @@ public class Main {
     System.out.print("\nDo you want to convert to USD, JPY or AUD: ");
     String choice = sc.nextLine();
 
+    System.out.print("\nPlease enter you current value in EUR: ");
+    double cur = sc.nextDouble();
+
     switch (choice.toUpperCase()) {
       case "JPY" -> {
-        System.out.print("\nPlease enter you current value in EUR: ");
-        double cur = sc.nextDouble();
-
         String newValue = String.format("%.2f", cur * jpyValue);
 
         System.out.println("The value of " + cur + "EUR is " + newValue + "JPY");
       }
       case "USD" -> {
-        System.out.print("\nPlease enter you current value in EUR: ");
-        double cur = sc.nextDouble();
-
         String newValue = String.format("%.2f", cur * usdValue);
 
         System.out.println("The value of " + cur + "EUR is " + newValue + "USD");
       }
       case "AUD" -> {
-        System.out.print("\nPlease enter you current value in EUR: ");
-        double cur = sc.nextDouble();
-
         String newValue = String.format("%.2f", cur * audValue);
 
         System.out.println("The value of " + cur + "EUR is " + newValue + "AUD");
@@ -50,8 +44,10 @@ public class Main {
     System.out.print("\nDo you want to convert another value (y/N) ");
     sc.nextLine();
     String again = sc.nextLine();
-    if (again.equalsIgnoreCase("y")) {
+    if (again.equalsIgnoreCase("y") || again.equalsIgnoreCase("yes")) {
       convert();
+    } else {
+      System.exit(0);
     }
   }
 }
