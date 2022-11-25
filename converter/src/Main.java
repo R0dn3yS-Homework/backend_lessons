@@ -45,8 +45,10 @@ public class Main {
     sc.nextLine();
     String again = sc.nextLine();
     if (again.equalsIgnoreCase("y") || again.equalsIgnoreCase("yes")) {
+      sc.close();
       convert();
     } else {
+      sc.close();
       System.exit(0);
     }
   }
