@@ -10,6 +10,8 @@ public class Main {
     double usdValue = 1.03;
     double jpyValue = 145.79;
     double audValue = 1.55;
+    
+    String newValue = null;
 
     Scanner sc = new Scanner(System.in);
 
@@ -21,25 +23,21 @@ public class Main {
 
     switch (choice.toUpperCase()) {
       case "JPY" -> {
-        String newValue = String.format("%.2f", cur * jpyValue);
-
-        System.out.println("The value of " + cur + "EUR is " + newValue + "JPY");
+        newValue = String.format("%.2f", cur * jpyValue);
       }
       case "USD" -> {
-        String newValue = String.format("%.2f", cur * usdValue);
-
-        System.out.println("The value of " + cur + "EUR is " + newValue + "USD");
+        newValue = String.format("%.2f", cur * usdValue);
       }
       case "AUD" -> {
-        String newValue = String.format("%.2f", cur * audValue);
-
-        System.out.println("The value of " + cur + "EUR is " + newValue + "AUD");
+        newValue = String.format("%.2f", cur * audValue);
       }
       default -> {
         System.out.println("Invalid choice.\nExiting...");
         System.exit(1);
       }
     }
+
+    System.out.println("The value of " + cur + "EUR is " + newValue + choice.toUpperCase());
 
     System.out.print("\nDo you want to convert another value (y/N) ");
     sc.nextLine();
