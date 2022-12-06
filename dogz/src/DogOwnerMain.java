@@ -23,6 +23,7 @@ public class DogOwnerMain {
 
         DogOwner nick = new DogOwner("Nick", "male");
         nick.setDog(dog);
+        nick.incDogAge();
 
         System.out.println(nick.toString());
 

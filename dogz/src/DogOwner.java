@@ -17,7 +17,7 @@ public class DogOwner {
   }
 
   public void incDogAge() {
-    this.dog.age = this.dog.age++;
+    this.dog.age = this.dog.age + 1;
   }
 
   public String toString() {
